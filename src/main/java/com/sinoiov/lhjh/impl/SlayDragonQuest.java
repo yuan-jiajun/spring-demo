@@ -8,8 +8,10 @@ import java.io.PrintStream;
  * 杀死暴龙行动
  * Created by lidawei on 2017/4/5.
  */
+
 public class SlayDragonQuest implements Quest {
-    private PrintStream printStream;
+    private final PrintStream printStream;
+
 
     public SlayDragonQuest(PrintStream printStream) {
         this.printStream = printStream;

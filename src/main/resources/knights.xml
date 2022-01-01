@@ -16,6 +16,7 @@
     <bean id="knight" class="com.sinoiov.lhjh.impl.BraveKnight">
         <constructor-arg ref="quest"/>
     </bean>
+
     <bean id="quest" class="com.sinoiov.lhjh.impl.SlayDragonQuest">
         <constructor-arg value="#{T(System).out}"/>
     </bean>
