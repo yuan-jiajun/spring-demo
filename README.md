@@ -276,7 +276,7 @@ Spring从两个角度来实现自动化装配：
 
 为了在Spring中阐述这个例子，我们首先在Java中建立CompactDisc，创建一个接口，如下所示：
 ```java
-package com.sinoiov.lhjh;
+package com.sankuai.yuan;
 
 public interface CompactDisc {
     void play();
@@ -285,7 +285,7 @@ public interface CompactDisc {
 CompactDisc的具体内容我们不关注，所以我们将它定义为一个接口，作为接口，它明确请求方能对这个CD做的事情，就是播放（也
 就是play()方法）。我们现在再写一个实现：
 ```java
-package com.sinoiov.lhjh;
+package com.sankuai.yuan;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -306,7 +306,7 @@ public class SgtPeppers implements CompactDisc {
 然而组件扫描默认不是启用状态，我们需要在配置文件中通知Spring这么做，让Spring去帮助我们找到有Component注解的那些类并
 为其创建Bean。我们这么做：
 ```java
-package com.sinoiov.lhjh;
+package com.sankuai.yuan;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ComponentScan;
@@ -320,7 +320,7 @@ public class CDPlayerConfig {
 地声明任何Bean，只不过它使用了ComponentScan注解，这个注解就能够通知Spring启用组件自动扫描。
 
 如果没有其他配置的话，ComponentScan默认会扫描与配置类相同的包（也就是这个配置类所在的包），现在，CDPlayerConfig这个类
-位于com.sinoiov.lhjh这个包中，那么这个包及其所有子包下的带有Component注解的类，都会被Spring自动扫描到，如此以来，Spring
+位于com.sankuai.yuan这个包中，那么这个包及其所有子包下的带有Component注解的类，都会被Spring自动扫描到，如此以来，Spring
 就能发现CompactDisc并且创建它的Bean。
 
 
@@ -334,13 +334,13 @@ public class CDPlayerConfig {
         http://www.springframework.org/schema/beans/spring-beans.xsd
           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.sinoiov.lhjh"/>
+    <context:component-scan base-package="com.sankuai.yuan"/>
 </beans>
 ```
 上面的配置做完之后，我们就已经正确的使用了Spring的组件自动扫描机制，现在我们还需要创建一个JUnit的测试类，来判断我们
 的CompactDisc是不是真正的创建出来了。下面是程序清单：
 ```java
-package com.sinoiov.lhjh;
+package com.sankuai.yuan;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -371,7 +371,7 @@ ContextConfiguration会告诉Spring去找到CDPlayerConfig这个类加载配置�
 方法中的断言去验证注入到测试代码中的CompactDisc的实例cd不为空，如果它不为空，就意味着Spring能够自动发现CompactDisc
 类，自动在Spring应用上下文中为其创建Bean，并将创建的Bean注入到测试类CDPlayerTest中。
 
-在上面这样的配置中，com.sinoiov.lhjh及其子包中，所有带有@Component注解的类都会自动创建为Bean，也就是说，只要我们在
+在上面这样的配置中，com.sankuai.yuan及其子包中，所有带有@Component注解的类都会自动创建为Bean，也就是说，只要我们在
 Java配置文件CDPlayerConfig（或者XML配置文件）中加一行@ComponentScan注解（或者context:component-scan节点），就能够
 自动创建无数个Bean，真是既方便又划算。
 
@@ -380,7 +380,7 @@ Java配置文件CDPlayerConfig（或者XML配置文件）中加一行@ComponentS
 有一个ID，默认的，它是将类名的第一个字母改成小写，本例中，就会是sgtPeppers。当然，我们也可以为这个Bean自己定义一个
 ID，这很容易做到：
 ```java
-package com.sinoiov.lhjh;
+package com.sankuai.yuan;
 import org.springframework.stereotype.Component;
 
 @Component(value = "lonelyHeartsClub")
@@ -465,15 +465,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ComponentScan;
 
 @Configuration
-@ComponentScan(basePackages = {"com.sinoiov.lhjh"})
+@ComponentScan(basePackages = {"com.sankuai.yuan"})
 public class CDPlayerConfig {
     // TODO: ...
 }
 ```
-这种方式，我们明确了配置类CDPlayerConfig本身在com.sinoiov.config这个包中，而我们指定要扫描的包在com.sinoiov.lhjh
+这种方式，我们明确了配置类CDPlayerConfig本身在com.sinoiov.config这个包中，而我们指定要扫描的包在com.sankuai.yuan
 这个包中。同时我们还看到了，basePackages这是一个数组，所以我们还可以为它指定多个值：
 ```java
-@ComponentScan(basePackages = {"com.sinoiov.lhjh1", "com.sinoiov.lhjh2"})
+@ComponentScan(basePackages = {"com.sankuai.yuan1", "com.sankuai.yuan2"})
 public class CDPlayerConfig {
     // TODO: ...
 }
@@ -483,7 +483,7 @@ public class CDPlayerConfig {
 当然了，更简单的：我们可以使用使用这种方式：
 ```java
 @Configuration
-@ComponentScan("com.sinoiov.lhjh")
+@ComponentScan("com.sankuai.yuan")
 public class CDPlayerConfig {
     // TODO: ...
 }

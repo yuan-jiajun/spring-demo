@@ -9,10 +9,10 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
     <!-- 启动Spring-MVC注解 -->
     <mvc:annotation-driven/>
 
-    <bean id="SpringContextUtil " class="com.sinoiov.lhjh.config.SpringContextUtil" lazy-init="false"/>
+    <bean id="SpringContextUtil " class="com.sankuai.yuan.config.SpringContextUtil" lazy-init="false"/>
 
     <!-- 使用注解解析Controller，自动扫描 -->
-    <context:component-scan base-package="com.sinoiov.lhjh.controller"/>
+    <context:component-scan base-package="com.sankuai.yuan.controller"/>
 
     <!-- 页面视图解析器，前缀，后缀 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/jsp/" p:suffix=".jsp"/>
@@ -29,7 +29,7 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
         </property>
     </bean>
 
-    <bean id="userService" class="com.sinoiov.lhjh.impl.UserServiceImpl"/>
-    <bean id="goodsService" class="com.sinoiov.lhjh.impl.GoodsServiceImpl"/>
-    <bean id="messageSender" class="com.sinoiov.lhjh.message.MessageSender"/>
+    <bean id="userService" class="com.sankuai.yuan.service.impl.UserServiceImpl"/>
+    <bean id="goodsService" class="com.sankuai.yuan.service.impl.GoodsServiceImpl"/>
+    <bean id="messageSender" class="com.sankuai.yuan.message.MessageSender"/>
 </beans>
