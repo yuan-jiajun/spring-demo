@@ -4,11 +4,9 @@
  */
 package com.sankuai.yuan.controller;
 
-import com.sankuai.yuan.service.HelloWorldService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * <p>
@@ -21,12 +19,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HelloController {
-    @Autowired
-    private HelloWorldService helloWorldService;
 
-    @RequestMapping(value = "/hello", method = RequestMethod.POST)
-    public String hello() {
-        return "helloWorldService.sayHello()";
+    @GetMapping(value = "/hello")
+    public @ResponseBody
+    String hello() {
+        return "hello String";
     }
 
 }
