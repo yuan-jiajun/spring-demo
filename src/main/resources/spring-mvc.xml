@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
@@ -14,10 +14,10 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
     <!-- 使用注解解析Controller，自动扫描 -->
     <context:component-scan base-package="com.sankuai.yuan.controller,com.sankuai.yuan.inject.beans"/>
 
-<!--    &lt;!&ndash; 页面视图解析器，前缀，后缀 &ndash;&gt;-->
-<!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/jsp/" p:suffix=".jsp"/>-->
+    <!--    &lt;!&ndash; 页面视图解析器，前缀，后缀 &ndash;&gt;-->
+    <!--    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/jsp/" p:suffix=".jsp"/>-->
 
-<!--    <mvc:resources mapping="/static/**" location="/static/"/>-->
+    <!--    <mvc:resources mapping="/static/**" location="/static/"/>-->
 
     <!-- 使用JSON数据格式 -->
     <bean id="mappingJacsonHttpMessageConvert"
@@ -28,12 +28,6 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
             </list>
         </property>
     </bean>
-
-    <bean id="userService" class="com.sankuai.yuan.service.impl.UserServiceImpl"/>
-
-    <bean id="goodsService" class="com.sankuai.yuan.service.impl.GoodsServiceImpl"/>
-
-    <bean id="messageSender" class="com.sankuai.yuan.message.MessageSender"/>
 
     <bean id="helloWorldService" class="com.sankuai.yuan.service.impl.HelloWorldServiceImpl"/>
 </beans>
