@@ -1,7 +1,7 @@
 package com.sankuai.yuan.service.impl;
 
-import com.sankuai.yuan.service.Knight;
-import com.sankuai.yuan.service.Quest;
+import com.sankuai.yuan.service.IKnight;
+import com.sankuai.yuan.service.IQuest;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BraveKnight implements Knight {
-    private Quest quest;
+public class BraveKnight implements IKnight {
+    private IQuest quest;
 
     @Override
     public void embarkOnQuest() {

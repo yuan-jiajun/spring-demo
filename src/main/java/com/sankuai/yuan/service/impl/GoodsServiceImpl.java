@@ -1,6 +1,6 @@
 package com.sankuai.yuan.service.impl;
 
-import com.sankuai.yuan.beans.GenericResponse;
+import com.sankuai.yuan.model.GenericResponse;
 import com.sankuai.yuan.entity.GoodsEntity;
 import com.sankuai.yuan.message.MessageSender;
 import com.sankuai.yuan.service.GoodsService;

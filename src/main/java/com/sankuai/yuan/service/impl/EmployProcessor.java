@@ -1,6 +1,6 @@
 package com.sankuai.yuan.service.impl;
 
-import com.sankuai.yuan.beans.Employee;
+import com.sankuai.yuan.model.Employee;
 import com.sankuai.yuan.config.MyDataSourceFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;

@@ -1,6 +1,6 @@
 package com.sankuai.yuan.controller;
 
-import com.sankuai.yuan.beans.GenericResponse;
+import com.sankuai.yuan.model.GenericResponse;
 import com.sankuai.yuan.entity.UserEntity;
 import com.sankuai.yuan.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

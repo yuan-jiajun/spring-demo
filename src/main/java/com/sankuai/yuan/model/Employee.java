@@ -1,4 +1,4 @@
-package com.sankuai.yuan.beans;
+package com.sankuai.yuan.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

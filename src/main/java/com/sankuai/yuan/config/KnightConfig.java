@@ -2,8 +2,8 @@ package com.sankuai.yuan.config;
 
 import com.sankuai.yuan.service.impl.BraveKnight;
 import com.sankuai.yuan.service.impl.SlayDragonQuest;
-import com.sankuai.yuan.service.Knight;
-import com.sankuai.yuan.service.Quest;
+import com.sankuai.yuan.service.IKnight;
+import com.sankuai.yuan.service.IQuest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -25,12 +25,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class KnightConfig {
     @Bean
-    public Knight knight() {
+    public IKnight knight() {
         return new BraveKnight(quest());
     }
 
     @Bean
-    public Quest quest() {
+    public IQuest quest() {
         return new SlayDragonQuest(System.out);
     }
 }

@@ -1,7 +1,8 @@
 package com.sankuai.yuan.service.impl;
 
-import com.sankuai.yuan.service.Knight;
-import com.sankuai.yuan.service.Quest;
+import com.sankuai.yuan.model.Minstrel;
+import com.sankuai.yuan.service.IKnight;
+import com.sankuai.yuan.service.IQuest;
 
 /**
  * <p>勇敢的骑士</p>
@@ -21,11 +22,11 @@ import com.sankuai.yuan.service.Quest;
  * </p>
  * Created by lidawei on 2017/4/5.
  */
-public class BraveKnightTraditional implements Knight {
-    private final Quest    quest;
+public class BraveKnightTraditional implements IKnight {
+    private final IQuest   quest;
     private final Minstrel minstrel;
 
-    public BraveKnightTraditional(Quest quest, Minstrel minstrel) {
+    public BraveKnightTraditional(IQuest quest, Minstrel minstrel) {
         this.quest = quest;
         this.minstrel = minstrel;
     }

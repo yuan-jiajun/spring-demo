@@ -1,6 +1,6 @@
 package com.sankuai.yuan.service;
 
-import com.sankuai.yuan.beans.GenericResponse;
+import com.sankuai.yuan.model.GenericResponse;
 import com.sankuai.yuan.entity.UserEntity;
 
 /**
@@ -9,7 +9,10 @@ import com.sankuai.yuan.entity.UserEntity;
  */
 public interface UserService {
     GenericResponse add(UserEntity entity);
+
     GenericResponse remove(UserEntity entity);
+
     GenericResponse update(UserEntity entity);
+
     GenericResponse<UserEntity> queryUserInfoById(String userId);
 }

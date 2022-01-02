@@ -1,4 +1,4 @@
-package com.sankuai.yuan.service.impl;
+package com.sankuai.yuan.model;
 
 import java.io.PrintStream;
 

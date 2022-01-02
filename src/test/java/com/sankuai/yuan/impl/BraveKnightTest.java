@@ -1,6 +1,6 @@
 package com.sankuai.yuan.impl;
 
-import com.sankuai.yuan.service.Quest;
+import com.sankuai.yuan.service.IQuest;
 import com.sankuai.yuan.service.impl.BraveKnight;
 import org.junit.Test;
 
@@ -16,7 +16,7 @@ public class BraveKnightTest {
     @Test
     public void knightShouldEmbarkOnQuest() {
         // 创建Mock对象
-        Quest mockQuest = mock(Quest.class);
+        IQuest mockQuest = mock(IQuest.class);
 
         // 创建一个英勇骑士，使用这个Mock对象
         BraveKnight knight = new BraveKnight(mockQuest);

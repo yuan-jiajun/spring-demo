@@ -1,6 +1,6 @@
 package com.sankuai.yuan.service;
 
-import com.sankuai.yuan.beans.GenericResponse;
+import com.sankuai.yuan.model.GenericResponse;
 import com.sankuai.yuan.entity.GoodsEntity;
 
 import java.util.List;
@@ -11,7 +11,10 @@ import java.util.List;
  */
 public interface GoodsService {
     GenericResponse add(GoodsEntity entity);
+
     GenericResponse remove(GoodsEntity entity);
+
     GenericResponse update(GoodsEntity entity);
+
     GenericResponse<List<GoodsEntity>> queryByName(String goodsName);
 }

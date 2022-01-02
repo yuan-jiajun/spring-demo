@@ -1,4 +1,4 @@
-package com.sankuai.yuan.beans;
+package com.sankuai.yuan.model;
 
 import com.google.gson.Gson;
 

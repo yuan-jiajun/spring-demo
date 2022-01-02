@@ -1,6 +1,6 @@
 package com.sankuai.yuan.service.impl;
 
-import com.sankuai.yuan.service.Quest;
+import com.sankuai.yuan.service.IQuest;
 
 import java.io.PrintStream;
 
@@ -9,7 +9,7 @@ import java.io.PrintStream;
  * Created by lidawei on 2017/4/5.
  */
 
-public class SlayDragonQuest implements Quest {
+public class SlayDragonQuest implements IQuest {
     private final PrintStream printStream;
 
 

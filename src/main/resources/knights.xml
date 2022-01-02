@@ -22,7 +22,7 @@
     </bean>
 
     <!-- 声明游吟诗人 -->
-    <bean id="minstrel" class="com.sankuai.yuan.service.impl.Minstrel">
+    <bean id="minstrel" class="com.sankuai.yuan.model.Minstrel">
         <constructor-arg value="#{T(System).out}"/>
     </bean>
     <!--
